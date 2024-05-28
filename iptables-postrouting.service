@@ -1,0 +1,10 @@
+[Unit]
+Description=MASQUERADE POSTROUTING on ethernet
+
+[Service]
+Type=oneshot
+ExecStart=iptables -t nat -A POSTROUTING -o enx000275d7b326 -j MASQUERADE
+
+[Install]
+WantedBy=default.target
+

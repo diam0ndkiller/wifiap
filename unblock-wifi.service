@@ -1,0 +1,10 @@
+[Unit]
+Description=Unblock WiFi on startup
+Before=hostapd.service dnsmasq.service dhcpcd.service
+
+[Service]
+Type=oneshot
+ExecStart=rfkill unblock wifi
+
+[Install]
+WantedBy=default.target
